@@ -17,7 +17,9 @@ export const HERO_TEXT = {
     bold2: 'dibangun',
     middle2: ', ',
     bold3: 'dipelajari',
-    after: ', dan dicapai dalam hidup.',
+    middle3: ', dan ',
+    bold4: 'dicapai',
+    after: ', dalam hidup.',
   },
   paragraph2: {
     before: 'Saya masih ',

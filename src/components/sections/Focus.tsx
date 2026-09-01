@@ -53,14 +53,12 @@ export default function FocusSection() {
               <div className="order-1 md:order-2 md:col-span-6 lg:col-span-6 w-[calc(100%+3rem)] -mx-6 md:w-full md:mx-0">
                 <div className="relative w-full h-[240px] sm:h-[280px] overflow-hidden group">
                   
-                  {/* Foto Utama */}
+                  {/* Foto Utama - Warna Asli (Grayscale Dihapus) */}
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover object-center grayscale brightness-90 contrast-[135%] filter transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
-                  
-                  <div className="absolute inset-0 bg-black/10 pointer-events-none" />
                   
                   {/* Gradien Kiri (Desktop saja) */}
                   <div className="hidden md:block absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none" />

@@ -41,7 +41,8 @@ export default function JourneySection() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/70 via-[#0A0A0A]/50 to-[#0A0A0A]/85" />
       </div>
 
-      <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center">
+      {/* Main Container */}
+      <div className="relative z-10 w-full flex flex-col lg:flex-row items-center">
         
         {/* Sisi Kiri: Teks Narasi & Filosofi */}
         <motion.div
@@ -49,7 +50,7 @@ export default function JourneySection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.2 }}
-          className="lg:col-span-7 pl-6 sm:pl-12 lg:pl-20 pr-6 lg:pr-12 space-y-8"
+          className="w-full lg:max-w-2xl xl:max-w-3xl pl-6 sm:pl-12 lg:pl-20 pr-6 lg:pr-12 space-y-8 z-10"
         >
           <div className="space-y-2">
             <motion.span 
@@ -111,17 +112,30 @@ export default function JourneySection() {
           </motion.div>
         </motion.div>
 
-        {/* Sisi Kanan: Foto Desktop */}
-        <div className="hidden lg:block lg:col-span-5 relative w-full h-[720px] overflow-hidden">
+        {/* Sisi Kanan: Foto Desktop (Diatur Absolute & Ditengahkan Mirip Hero) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="hidden lg:flex absolute right-0 bottom-0 z-0 w-[50vw] max-w-[700px] xl:max-w-[800px] h-full items-center justify-end pointer-events-none"
+        >
           <img 
             src={JOURNEY_TEXT.image} 
             alt={JOURNEY_TEXT.author}
-            className="w-full h-full object-cover object-center grayscale brightness-90 contrast-[125%] filter"
+            className="w-full h-full object-cover object-[center_35%] grayscale brightness-90 contrast-[125%] filter pointer-events-auto"
+            style={{
+              WebkitMaskImage:
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
+              WebkitMaskComposite: 'intersect',
+              maskImage:
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
+              maskComposite: 'intersect',
+            }}
           />
-          <div className="absolute inset-y-0 left-0 w-3/4 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/70 to-transparent pointer-events-none" />
-          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent pointer-events-none" />
-        </div>
+          {/* Overlay gradien halus untuk bagian bawah */}
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none" />
+        </motion.div>
 
       </div>
     </section>

@@ -43,20 +43,20 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
       ref={heroRef}
       className="relative w-full min-h-screen lg:h-screen bg-dark-bg text-white flex flex-col justify-between px-6 sm:px-12 lg:px-20 pt-16 lg:pt-20 pb-6 font-sans border-b border-line select-none overflow-x-hidden"
     >
-      {/* FOTO MOBILE SEBAGAI BACKGROUND */}
+      {/* FOTO MOBILE SEBAGAI BACKGROUND - Lebih Terang */}
       <div className="block lg:hidden absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img
-          src="/nagatahp.png"
+          src="/nagataSelf.jpg"
           alt="Nagata Darmawan"
-          className="w-full h-full object-cover object-[center_20%] filter drop-shadow-2xl grayscale contrast-125 opacity-30 sm:opacity-40"
+          className="w-full h-full object-cover object-[center_20%] filter drop-shadow-2xl grayscale contrast-110 brightness-110 opacity-60 sm:opacity-70"
           style={{
             WebkitMaskImage:
-              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0) 100%)',
+              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0) 100%)',
             maskImage:
-              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0) 100%)',
+              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0) 100%)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/30 to-transparent" />
       </div>
 
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-zinc-900/30 rounded-full blur-3xl pointer-events-none" />
@@ -131,6 +131,8 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
               <strong className="font-bold text-white">{HERO_TEXT.paragraph1.bold2}</strong>
               {HERO_TEXT.paragraph1.middle2}
               <strong className="font-bold text-white">{HERO_TEXT.paragraph1.bold3}</strong>
+              {HERO_TEXT.paragraph1.middle3}
+              <strong className="font-bold text-white">{HERO_TEXT.paragraph1.bold4}</strong>
               {HERO_TEXT.paragraph1.after}
             </p>
 
@@ -166,27 +168,27 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
           </motion.div>
         </motion.div>
 
-        {/* FOTO DESKTOP */}
+{/* FOTO DESKTOP - Mentok Full Kanan Layar */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isReady && isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="hidden lg:flex absolute -right-20 bottom-[-24px] z-0 w-[50vw] max-w-[600px] h-[85vh] items-end justify-end pointer-events-none"
+          className="hidden lg:flex absolute right-0 -mr-6 sm:-mr-12 lg:-mr-20 bottom-[-24px] z-0 w-[55vw] max-w-[750px] xl:max-w-[850px] h-[95vh] items-end justify-end pointer-events-none"
         >
           <img
-            src="/nagatahp2.jpg"
+            src="/nagataSelf.jpg"
             alt="Nagata Darmawan"
-            className="h-full w-auto object-contain object-right object-bottom filter drop-shadow-2xl grayscale contrast-125 pointer-events-auto"
+            className="h-full w-full object-cover object-right-bottom filter drop-shadow-2xl grayscale contrast-125 pointer-events-auto"
             style={{
               WebkitMaskImage:
-                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%)',
               WebkitMaskComposite: 'intersect',
               maskImage:
-                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%)',
               maskComposite: 'intersect',
             }}
           />
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-dark-bg via-dark-bg/70 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-dark-bg via-dark-bg/70 to-transparent pointer-events-none" />
         </motion.div>
 
       </div>

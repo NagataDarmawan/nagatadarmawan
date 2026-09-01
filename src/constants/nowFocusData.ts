@@ -16,7 +16,7 @@ export const NOW_FOCUS_TEXT = {
       title: "MEMBANGUN",
       description:
         "Mengubah lebih banyak ide menjadi sesuatu yang nyata. Tidak harus besar. Sebuah project sederhana tetap lebih baik daripada ide yang tidak pernah dibuat.",
-      image: "/nagata.jpg",
+      image: "/keyboard.jpg",
     },
     {
       id: "02",
@@ -24,7 +24,7 @@ export const NOW_FOCUS_TEXT = {
       title: "BELAJAR",
       description:
         "Memahami sesuatu lebih dalam, bukan hanya sekadar bisa menggunakannya. Teknologi, keuangan, bisnis, dan berbagai hal yang mungkin berguna untuk masa depan.",
-      image: "/nagata.jpg",
+      image: "/keyboard.jpg",
     },
     {
       id: "03",
@@ -32,7 +32,7 @@ export const NOW_FOCUS_TEXT = {
       title: "BERKEMBANG",
       description:
         "Tidak hanya secara akademik atau profesional, tetapi juga menjadi pribadi yang lebih disiplin, sehat, dan konsisten. Tujuannya bukan memiliki semuanya sekarang. Tujuannya adalah terus bergerak menuju versi diri yang lebih baik.",
-      image: "/nagata.jpg",
+      image: "/keyboard.jpg",
     },
   ],
 };
