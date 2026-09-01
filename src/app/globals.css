@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Menyembunyikan Scrollbar di Seluruh Browser */
+html,
+body {
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE dan Edge lama */
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Safari, dan Opera (WebKit) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Opsional: Mengatur kecepatan scroll bawaan agar terasa lebih empuk */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@theme {
+  --color-bg-cream: #EAE7E0;      /* Background Cream/Beige sesuai gambar */
+  --color-text-dark: #111111;     /* Teks Hitam Pekat */
+  --color-text-dim: #666666;      /* Teks Muted Grey */
+  --color-border-subtle: #DCD8D0; /* Border Cream Gelap */
+}
+
+@layer utilities {
+  .bg-bg-cream { background-color: #EAE7E0; }
+  .text-text-dark { color: #111111; }
+  .text-text-dim { color: #666666; }
+  .border-border-subtle { border-color: #DCD8D0; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #111111;
+  color: #EAE7E0;
+}
