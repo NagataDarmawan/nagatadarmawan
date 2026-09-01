@@ -11,7 +11,7 @@ export const JOURNEY_TEXT = {
   actionPoints: ["Terus membangun.", "Terus belajar.", "Terus berkembang."],
   philosophyQuote:
     'Karena saya tidak ingin hanya menunggu sampai suatu hari saya menjadi "seseorang". Saya ingin menikmati proses untuk menjadi orang tersebut.',
-  closingText: "Sampai bertemu di perjalanan.",
+  closingText: "Sampai bertemu di Pelabuhan yang paling indah.",
   author: "Nagata Darmawan",
   image: "/nagataJourney.jpg",
 };
