@@ -28,7 +28,7 @@ export const FOCUS_TEXT = {
       p2: "Saya ingin memahami bagaimana cara membangun kondisi keuangan yang lebih baik dalam jangka panjang.",
       focusLabel: "Sedang didalami:",
       skills: ["Investasi", "Pasar Saham", "Analisis Fundamental", "Manajemen Portofolio", "Personal Finance"],
-      image: "/Finance.jpg",
+      image: "/finance.jpg",
     },
     {
       id: "03",
