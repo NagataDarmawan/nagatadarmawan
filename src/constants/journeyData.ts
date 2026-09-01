@@ -13,5 +13,5 @@ export const JOURNEY_TEXT = {
     'Karena saya tidak ingin hanya menunggu sampai suatu hari saya menjadi "seseorang". Saya ingin menikmati proses untuk menjadi orang tersebut.',
   closingText: "Sampai bertemu di perjalanan.",
   author: "Nagata Darmawan",
-  image: "/nagatahp2.jpg",
+  image: "/nagataJourney.jpg",
 };

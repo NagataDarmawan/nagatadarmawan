@@ -37,7 +37,7 @@ export const PROJECTS_TEXT = {
       title: "eduStock",
       subtitle: "Website Edukasi",
       description:
-        "Project e-commerce sederhana yang mengeksplorasi produk, variasi ukuran dan warna, pesanan, pembayaran, serta pengiriman.",
+        "Konsep Website edukasi saham sederhana yang mempelajari jenis-jenis emiten, strategi alokasi sektor, proses transaksi bid/offer, hingga manajemen risiko dan dividen.",
       tags: ["React", "Node.js", "Google Sheets"],
       status: "Concept App",
       role: "Frontend",
