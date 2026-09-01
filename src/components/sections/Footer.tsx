@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { FOOTER_DATA } from '@/constants/footerData';
 import ProjectModal from '@/components/ui/projectModal';
+import { scrollToSection } from '@/utils/scrollTo';
 
 // Kumpulan SVG Icons untuk Footer
 const InstagramIcon = () => (
@@ -166,6 +167,19 @@ export default function FooterSection() {
                   </button>
                 </li>
               ))}
+              {/* Opsi Lainnya Mengarah langsung ke Section Projects */}
+              <li>
+                <a 
+                  href="#projects"
+                  onClick={(e) => scrollToSection(e, '#projects')}
+                  className="inline-flex items-center gap-2 text-sm sm:text-base font-bold uppercase text-zinc-300 hover:text-white group transition-colors duration-300 text-left cursor-pointer"
+                >
+                  <span>Lainnya</span>
+                  <span className="text-zinc-500 group-hover:text-white transition-colors duration-300">
+                    <ExternalLinkIcon />
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
 

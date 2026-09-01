@@ -5,7 +5,7 @@ import SmoothScroll from '@/components/common/SmoothScroll';
 
 export const metadata: Metadata = {
   title: 'NAGATA DARMAWAN — Saya Belum Sampai di Sana',
-  description: 'Website Personal Brand Nagata Darmawan',
+  description: 'Nagata Darmawan - Seorang mahasiswa Teknik Informatika yang sedang mencari tahu apa yang ingin dibangun, dipelajari, dan dicapai dalam hidup.',
 };
 
 export default function RootLayout({
