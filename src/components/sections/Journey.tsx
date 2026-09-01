@@ -29,16 +29,22 @@ export default function JourneySection() {
   return (
     <section 
       id="journey" 
-      className="relative w-full bg-[#0A0A0A] text-white py-16 lg:py-20 font-sans select-none overflow-hidden"
+      className="relative w-full bg-[#0A0A0A] text-white py-16 lg:py-20 font-sans select-none overflow-hidden -mt-px"
     >
-      {/* Background Foto Mobile */}
-      <div className="block lg:hidden absolute inset-0 z-0 overflow-hidden">
+      {/* Background Foto Mobile (Pudar Atas dan Bawah Mulus) */}
+      <div className="block lg:hidden absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img 
           src={JOURNEY_TEXT.image} 
           alt={JOURNEY_TEXT.author}
-          className="w-full h-full object-cover object-center grayscale brightness-95 contrast-[110%] opacity-75"
+          className="w-full h-full object-cover object-center grayscale brightness-95 contrast-[110%] opacity-70"
+          style={{
+            WebkitMaskImage:
+              'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
+            maskImage:
+              'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/70 via-[#0A0A0A]/50 to-[#0A0A0A]/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]/80" />
       </div>
 
       {/* Main Container */}
@@ -112,7 +118,7 @@ export default function JourneySection() {
           </motion.div>
         </motion.div>
 
-        {/* Sisi Kanan: Foto Desktop (Diatur Absolute & Ditengahkan Mirip Hero) */}
+        {/* Sisi Kanan: Foto Desktop */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -133,7 +139,6 @@ export default function JourneySection() {
               maskComposite: 'intersect',
             }}
           />
-          {/* Overlay gradien halus untuk bagian bawah */}
           <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none" />
         </motion.div>
 
