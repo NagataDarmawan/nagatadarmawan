@@ -7,9 +7,15 @@ import { ProjectItem } from '@/constants/projectsData';
 interface ProjectContentProps {
   currentProject: ProjectItem;
   onDemoClick: (projectName: string) => void;
+  // Tambahkan prop baru untuk menangani klik "Lihat Gambar"
+  onViewImageClick: (imageUrl: string) => void;
 }
 
-export default function ProjectContent({ currentProject, onDemoClick }: ProjectContentProps) {
+export default function ProjectContent({ 
+  currentProject, 
+  onDemoClick, 
+  onViewImageClick // Terima prop baru di sini
+}: ProjectContentProps) {
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -47,6 +53,19 @@ export default function ProjectContent({ currentProject, onDemoClick }: ProjectC
           <span className="inline-flex items-center px-4 py-1.5 rounded-none border border-zinc-700 bg-zinc-900/90 text-zinc-300 font-mono font-bold text-xs uppercase tracking-wider backdrop-blur-md">
             {currentProject.role}
           </span>
+
+          {/* TOMBOL LIHAT GAMBAR - Tambahkan di sini */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation(); // Mencegah slider ter-pause
+              onViewImageClick(currentProject.image);
+            }}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-none border border-zinc-600 bg-zinc-950 text-zinc-100 font-mono font-bold text-xs uppercase tracking-wider hover:bg-zinc-800 hover:border-zinc-500 transition-colors duration-300 cursor-pointer backdrop-blur-md"
+          >
+            {/* Ikon Mata (Lucide React) */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            Lihat Gambar
+          </button>
 
           {currentProject.demoUrl && (
             <button

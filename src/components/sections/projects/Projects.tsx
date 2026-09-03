@@ -8,6 +8,7 @@ import { useProjectsAnimation } from '@/hooks/useProjectsAnimation';
 import ProjectContent from './ProjectContent';
 import ProjectControls from './ProjectsControls';
 import ProjectModal from '@/components/ui/projectModal';
+import { X } from 'lucide-react';
 
 export default function ProjectsSection() {
   const {
@@ -26,6 +27,9 @@ export default function ProjectsSection() {
   // State & Handler untuk Modal Demo Project
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState('');
+
+  // State untuk Modal Preview Gambar Fullscreen
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   const handleOpenDemoModal = (projectName: string) => {
     setSelectedProject(projectName);
@@ -89,6 +93,7 @@ export default function ProjectsSection() {
             <ProjectContent 
               currentProject={currentProject} 
               onDemoClick={handleOpenDemoModal} 
+              onViewImageClick={(imageUrl) => setPreviewImage(imageUrl)}
             />
             <ProjectControls
               currentIndex={currentIndex}
@@ -120,6 +125,35 @@ export default function ProjectsSection() {
         onClose={() => setIsModalOpen(false)} 
         projectName={selectedProject} 
       />
+
+      {/* Modal Preview Gambar Fullscreen */}
+      <AnimatePresence>
+        {previewImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setPreviewImage(null)}
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+          >
+            <button
+              onClick={() => setPreviewImage(null)}
+              className="absolute top-6 right-6 p-2 bg-zinc-900 border border-zinc-700 text-white hover:border-white transition-colors cursor-pointer"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              src={previewImage}
+              alt="Project Preview"
+              className="max-w-full max-h-[90vh] object-contain border border-zinc-800 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

@@ -28,7 +28,7 @@ export const PROJECTS_TEXT = {
       tags: ["React", "TypeScript", "Finance"],
       status: "Concept App",
       role: "Frontend",
-      image: "/finance.jpg",
+      image: "/AngonDuit.jpg",
       demoUrl: "https://demo.investdash.com",
     },
     {
@@ -70,5 +70,18 @@ export const PROJECTS_TEXT = {
       image: "/self.jpg",
       demoUrl: "#",
     },
+    {
+      id: "05",
+      category: "PERSONAL BRANDING",
+title: "NAGATA DARMAWAN",
+subtitle: "Eksplorasi, Mindset, & Proses Belajar",
+description:
+  "Representasi dari perjalanan saya sebagai mahasiswa Teknik Informatika yang terus belajar, mencoba hal baru, dan berproses mendekati tujuan. Menampilkan minat saya di bidang teknologi web dan lanskap finansial.",
+tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      status: "Live Website",
+      role: "Frontend",
+      image: "/WebPersonalBrand.jpg",
+      demoUrl: "https://nagatadarmawan.vercel.app",
+    }
   ],
 };
