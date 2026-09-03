@@ -1,31 +1,13 @@
 'use client';
 
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { JOURNEY_TEXT } from '@/constants/journeyData';
-
-// Variasi Animasi Framer Motion
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 25 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] },
-  },
-};
+import { useJourneyAnimation } from '@/hooks/useJourneyAnimation';
 
 export default function JourneySection() {
+  const { containerVariants, itemVariants } = useJourneyAnimation();
+
   return (
     <section 
       id="journey" 

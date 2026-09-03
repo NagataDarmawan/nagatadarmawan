@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FOOTER_DATA } from '@/constants/footerData';
 import ProjectModal from '@/components/ui/projectModal';
 import { scrollToSection } from '@/utils/scrollTo';
+import { useTypingLoop } from '@/hooks/useTypingLoop';
 
 // Kumpulan SVG Icons untuk Footer
 const InstagramIcon = () => (
@@ -69,47 +70,12 @@ const renderSocialIcon = (name: string) => {
 };
 
 export default function FooterSection() {
-  const fullText = FOOTER_DATA.tagline;
-  const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  // Menggunakan kustom hook `useTypingLoop` untuk menganimasi teks tagline
+  const { displayedFirst: displayedTagline } = useTypingLoop(FOOTER_DATA.tagline, '');
 
   // State untuk mengontrol Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState('');
-
-  // Efek Mengetik Berulang (Looping Typewriter)
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    const handleTyping = () => {
-      if (!isDeleting) {
-        if (currentIndex <= fullText.length) {
-          setDisplayedText(fullText.substring(0, currentIndex));
-          setCurrentIndex((prev) => prev + 1);
-          timeout = setTimeout(handleTyping, 30);
-        } else {
-          timeout = setTimeout(() => {
-            setIsDeleting(true);
-          }, 1000);
-        }
-      } else {
-        if (currentIndex >= 0) {
-          setDisplayedText(fullText.substring(0, currentIndex));
-          setCurrentIndex((prev) => prev - 1);
-          timeout = setTimeout(handleTyping, 15);
-        } else {
-          setIsDeleting(false);
-          setCurrentIndex(0);
-          timeout = setTimeout(handleTyping, 300);
-        }
-      }
-    };
-
-    timeout = setTimeout(handleTyping, 30);
-
-    return () => clearTimeout(timeout);
-  }, [currentIndex, isDeleting, fullText]);
 
   // Handler klik project di footer untuk membuka modal
   const handleProjectClick = (e: React.MouseEvent, projectName: string) => {
@@ -125,7 +91,7 @@ export default function FooterSection() {
         {/* 1. Tagline dengan Animasi Mengetik & Sosial Media */}
         <div className="space-y-6 max-w-2xl">
           <p className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white leading-snug min-h-[3.5rem]">
-            {displayedText}
+            {displayedTagline}
             <span className="inline-block w-2 h-5 bg-white ml-1 animate-pulse align-middle" />
           </p>
 
