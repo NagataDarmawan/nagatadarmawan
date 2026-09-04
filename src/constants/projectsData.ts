@@ -41,7 +41,7 @@ export const PROJECTS_TEXT = {
       tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
       status: "Live Website",
       role: "Frontend",
-      image: "/ribuanmdpl.jpg",
+      image: "/ribuanmdpl.jpeg",
       demoUrl: "https://ribuanmdpl.vercel.app",
     },
     {
