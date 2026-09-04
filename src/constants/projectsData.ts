@@ -33,6 +33,32 @@ export const PROJECTS_TEXT = {
     },
     {
       id: "02",
+      category: "Open Trip Platform",
+      title: "RibuanMDPL.id",
+      subtitle: "Landing Page Open Trip Pendakian Gunung",
+      description:
+        "RibuanMDPL.id adalah platform open trip pendakian gunung yang menyediakan berbagai pilihan perjalanan untuk menjelajahi keindahan pegunungan Indonesia. Temukan gunung pilihanmu, pilih paket pendakian, dan nikmati perjalanan bersama pendaki lainnya dengan lebih mudah dan menyenangkan.",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      status: "Live Website",
+      role: "Frontend",
+      image: "/ribuanMDPL.jpg",
+      demoUrl: "https://ribuanmdpl.vercel.app",
+    },
+    {
+      id: "03",
+      category: "PERSONAL BRANDING",
+      title: "NAGATA DARMAWAN",
+      subtitle: "Landing Page Personal Branding",
+      description:
+        "Representasi dari perjalanan saya sebagai mahasiswa Teknik Informatika yang terus belajar, mencoba hal baru, dan berproses mendekati tujuan. Menampilkan minat saya di bidang teknologi web dan lanskap finansial.",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      status: "Live Website",
+      role: "Frontend",
+      image: "/WebPersonalBrand.jpg",
+      demoUrl: "https://nagatadarmawan.vercel.app",
+    },
+    {
+      id: "04",
       category: "EDUCATION",
       title: "eduStock",
       subtitle: "Website Edukasi",
@@ -44,21 +70,9 @@ export const PROJECTS_TEXT = {
       image: "/bussines.jpg",
       demoUrl: "#",
     },
+
     {
-      id: "03",
-      category: "TRAVEL & CONTENT",
-      title: "OPEN TRIP",
-      subtitle: "Website Open Trip",
-      description:
-        "Konsep website untuk menampilkan dan mengelola paket open trip, destinasi, galeri, artikel, dan jadwal perjalanan.",
-      tags: ["Web Development", "CMS"],
-      status: "Concept App",
-      role: "Frontend",
-      image: "/tech.jpeg",
-      demoUrl: "#",
-    },
-    {
-      id: "04",
+      id: "05",
       category: "POINT OF SALE",
       title: "POS",
       subtitle: "Sistem Kasir Sederhana",
@@ -70,18 +84,5 @@ export const PROJECTS_TEXT = {
       image: "/self.jpg",
       demoUrl: "#",
     },
-    {
-      id: "05",
-      category: "PERSONAL BRANDING",
-title: "NAGATA DARMAWAN",
-subtitle: "Eksplorasi, Mindset, & Proses Belajar",
-description:
-  "Representasi dari perjalanan saya sebagai mahasiswa Teknik Informatika yang terus belajar, mencoba hal baru, dan berproses mendekati tujuan. Menampilkan minat saya di bidang teknologi web dan lanskap finansial.",
-tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      status: "Live Website",
-      role: "Frontend",
-      image: "/WebPersonalBrand.jpg",
-      demoUrl: "https://nagatadarmawan.vercel.app",
-    }
   ],
 };
