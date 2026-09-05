@@ -70,18 +70,24 @@ const renderSocialIcon = (name: string) => {
 };
 
 export default function FooterSection() {
-  // Menggunakan kustom hook `useTypingLoop` untuk menganimasi teks tagline
   const { displayedFirst: displayedTagline } = useTypingLoop(FOOTER_DATA.tagline, '');
 
-  // State untuk mengontrol Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState('');
 
-  // Handler klik project di footer untuk membuka modal
-  const handleProjectClick = (e: React.MouseEvent, projectName: string) => {
+  // Handler disamakan persis logikanya dengan ProjectContent:
+  const handleProjectClick = (e: React.MouseEvent, proj: { name: string; url?: string; href?: string }) => {
     e.preventDefault(); 
-    setSelectedProject(projectName);
-    setIsModalOpen(true);
+    const url = proj.url ?? proj.href ?? '';
+
+    // Jika URL mengandung 'demo', 'staging', '#', atau kosong -> TAMPILKAN MODAL
+    if (!url || url === '#' || url.includes('demo') || url.includes('staging')) {
+      setSelectedProject(proj.name);
+      setIsModalOpen(true);
+    } else {
+      // Jika URL live/aktif (seperti ribuanmdpl.vercel.app), langsung buka tab baru
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -123,7 +129,7 @@ export default function FooterSection() {
               {FOOTER_DATA.projects.map((proj, idx) => (
                 <li key={idx}>
                   <button 
-                    onClick={(e) => handleProjectClick(e, proj.name)}
+                    onClick={(e) => handleProjectClick(e, proj)}
                     className="inline-flex items-center gap-2 text-sm sm:text-base font-bold uppercase text-zinc-300 hover:text-white group transition-colors duration-300 text-left cursor-pointer"
                   >
                     <span>{proj.name}</span>
