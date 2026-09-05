@@ -43,34 +43,34 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
       ref={heroRef}
       className="relative w-full min-h-screen lg:h-screen bg-dark-bg text-white flex flex-col justify-between px-6 sm:px-12 lg:px-20 pt-16 lg:pt-20 pb-6 font-sans border-b border-line select-none overflow-x-hidden"
     >
-      {/* FOTO MOBILE SEBAGAI BACKGROUND - Lebih Terang */}
-      <div className="block lg:hidden absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <img
-          src="/nagataSelf.jpg"
-          alt="Nagata Darmawan"
-          className="w-full h-full object-cover object-[center_20%] filter drop-shadow-2xl grayscale contrast-110 brightness-110 opacity-60 sm:opacity-70"
-          style={{
-            WebkitMaskImage:
-              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0) 100%)',
-            maskImage:
-              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0) 100%)',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/30 to-transparent" />
-      </div>
-
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-zinc-900/30 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Container */}
       <div className="relative w-full flex flex-col lg:flex-row items-center my-auto py-2 lg:py-0 gap-6 lg:gap-0 z-10">
         
-        {/* TEKS: Didorong Ke Bawah Mendekati Footer */}
+        {/* TEKS */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isReady ? "show" : "hidden"}
-          className="w-full max-w-xl lg:max-w-2xl flex flex-col justify-center space-y-4 md:space-y-6 mr-auto mt-auto pt-36 lg:pt-0"
+          className="w-full max-w-xl lg:max-w-2xl flex flex-col justify-center space-y-4 md:space-y-6 mr-auto mt-auto pt-10 lg:pt-0"
         >
+          {/* FOTO MOBILE */}
+          <motion.div 
+            variants={itemVariants}
+            className="block lg:hidden w-[calc(100%+3rem)] -mx-6 -mt-28 sm:-mt-32 mb-6"
+          >
+            <img
+              src="/nagataSelf2.jpg"
+              alt="Nagata Darmawan"
+              className="w-full h-auto object-cover object-top filter drop-shadow-2xl"
+              style={{
+                WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
+                maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
+              }}
+            />
+          </motion.div>
+
           {/* Tagline */}
           <motion.div variants={itemVariants} className="flex items-center gap-3">
             <div className="relative w-10 h-[2px] overflow-hidden rounded-full bg-zinc-800">
@@ -148,12 +148,12 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap items-center gap-4 pt-1"
+            className="flex flex-row items-center gap-3 sm:gap-4 pt-1"
           >
             <a
               href="#about"
               onClick={(e) => scrollToSection(e, '#about')}
-              className="px-7 py-3.5 rounded-full bg-white text-black font-bold text-sm transition-transform duration-300 hover:-translate-y-1 active:scale-95 cursor-pointer"
+              className="flex-1 sm:flex-initial text-center px-4 sm:px-7 py-3.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm transition-transform duration-300 hover:-translate-y-1 active:scale-95 cursor-pointer whitespace-nowrap"
             >
               Kenali Saya
             </a>
@@ -161,14 +161,14 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
             <a
               href="#projects"
               onClick={(e) => scrollToSection(e, '#projects')}
-              className="px-7 py-3.5 rounded-full border border-line bg-zinc-950 text-offwhite font-medium text-sm transition-transform duration-300 hover:-translate-y-1 hover:text-white cursor-pointer"
+              className="flex-1 sm:flex-initial text-center px-4 sm:px-7 py-3.5 rounded-full border border-line bg-zinc-950 text-offwhite font-medium text-xs sm:text-sm transition-transform duration-300 hover:-translate-y-1 hover:text-white cursor-pointer whitespace-nowrap"
             >
               Lihat Yang Saya Bangun
             </a>
           </motion.div>
         </motion.div>
 
-{/* FOTO DESKTOP - Mentok Full Kanan Layar */}
+        {/* FOTO DESKTOP - Transisi Gradien Pudar Diperhalus Mulus */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isReady && isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
@@ -178,17 +178,18 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
           <img
             src="/nagataSelf.jpg"
             alt="Nagata Darmawan"
-            className="h-full w-full object-cover object-right-bottom filter drop-shadow-2xl grayscale contrast-125 pointer-events-auto"
+            className="h-full w-full object-cover object-right-bottom filter drop-shadow-2xl pointer-events-auto"
             style={{
               WebkitMaskImage:
-                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%)',
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,1) 55%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)',
               WebkitMaskComposite: 'intersect',
               maskImage:
-                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%)',
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,1) 55%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)',
               maskComposite: 'intersect',
             }}
           />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-dark-bg via-dark-bg/70 to-transparent pointer-events-none" />
+          {/* Overlay pendukung agar pudar bagian bawah semakin sempurna */}
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent pointer-events-none" />
         </motion.div>
 
       </div>

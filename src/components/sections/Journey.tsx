@@ -18,7 +18,7 @@ export default function JourneySection() {
         <img 
           src={JOURNEY_TEXT.image} 
           alt={JOURNEY_TEXT.author}
-          className="w-full h-full object-cover object-center grayscale brightness-95 contrast-[110%] opacity-70"
+          className="w-full h-full object-cover object-center opacity-70"
           style={{
             WebkitMaskImage:
               'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
@@ -111,7 +111,7 @@ export default function JourneySection() {
           <img 
             src={JOURNEY_TEXT.image} 
             alt={JOURNEY_TEXT.author}
-            className="w-full h-full object-cover object-[center_35%] grayscale brightness-90 contrast-[125%] filter pointer-events-auto"
+            className="w-full h-full object-cover object-[center_35%] filter drop-shadow-2xl pointer-events-auto"
             style={{
               WebkitMaskImage:
                 'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',

@@ -9,7 +9,8 @@ export const FOOTER_DATA = {
   ],
   projects: [
     { name: "ANGONDUIT.", url: "https://demo.asetku.com" },
-    { name: "Open Trip", url: "https://demo.opentrip.com" },
+    { name: "RibuanMDPL.id", url: "https://ribuanmdpl.vercel.app" },
+    { name: "NAGATA DARMAWAN", url: "https://nagatadarmawan.vercel.app" },
     { name: "UMKM POS Web App", url: "https://demo.umkmpos.com" },
     { name: "eduStock", url: "https://demo.siakad.com" },
   ],
