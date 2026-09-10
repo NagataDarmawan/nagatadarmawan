@@ -1,17 +1,15 @@
 export const JOURNEY_TEXT = {
   sectionTag: "PERJALANAN",
   headline: "Saya Belum Sampai di Sana.",
-  subHeadline: "Dan mungkin masih jauh.",
-  paragraphs: [
-    "Masih banyak yang belum saya tahu.",
-    "Masih banyak yang harus saya pelajari.",
-    "Masih banyak kesalahan yang mungkin akan saya buat.",
+  subHeadline: "Dan mungkin perjalanan ini masih panjang.",
+  story: [
+    "Jujur, masih banyak hal yang belum saya tahu, banyak yang harus saya pelajari, dan tidak sedikit kesalahan yang mungkin akan saya buat ke depannya.",
+    "Tapi semua itu bukan alasan untuk berhenti. Saya memilih untuk terus mencoba—terus membangun, belajar, dan berkembang setiap harinya.",
+    "Saya tidak ingin sekadar menunggu sampai suatu hari menjadi 'seseorang'. Saya ingin menikmati dan menghargai seluruh proses untuk membentuk diri saya yang sekarang.",
   ],
-  trialQuote: "Tapi saya ingin terus mencoba.",
-  actionPoints: ["Terus membangun.", "Terus belajar.", "Terus berkembang."],
-  philosophyQuote:
-    'Karena saya tidak ingin hanya menunggu sampai suatu hari saya menjadi "seseorang". Saya ingin menikmati proses untuk menjadi orang tersebut.',
-  closingText: "Sampai bertemu di Pelabuhan yang paling indah.",
-  author: "- Nagata Darmawan",
+  closing: {
+    quote: "Sampai bertemu di pelabuhan yang paling indah.",
+    author: "- Nagata Darmawan",
+  },
   image: "/nagataJourney.jpg",
 };

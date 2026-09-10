@@ -53,7 +53,7 @@ export default function FocusSection() {
               <div className="order-1 md:order-2 md:col-span-6 lg:col-span-6 w-[calc(100%+3rem)] -mx-6 md:w-full md:mx-0">
                 <div className="relative w-full h-[240px] sm:h-[280px] overflow-hidden group">
                   
-                  {/* Foto Utama - Warna Asli (Grayscale Dihapus) */}
+                  {/* Foto Utama - Warna Asli */}
                   <img 
                     src={item.image} 
                     alt={item.title}
@@ -71,17 +71,13 @@ export default function FocusSection() {
               </div>
 
               {/* Teks Deskripsi */}
-              <div className="order-2 md:order-1 md:col-span-6 lg:col-span-6 pr-0 md:pr-0 space-y-2">
+              <div className="order-2 md:order-1 md:col-span-6 lg:col-span-6 pr-0 md:pr-0 space-y-3">
                 <span className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white block">
                   {item.title}
                 </span>
                 
-                <p className="text-xs sm:text-sm leading-relaxed text-zinc-200 font-medium">
-                  {item.p1}
-                </p>
-                
-                <p className="text-xs sm:text-sm leading-relaxed text-zinc-400">
-                  {item.p2}
+                <p className="text-xs sm:text-sm leading-relaxed text-zinc-300 font-medium">
+                  {item.description}
                 </p>
 
                 {/* Badges Menyala Serentak (Kotak Tegas) */}

@@ -8,7 +8,6 @@ import { useProjectsAnimation } from '@/hooks/useProjectsAnimation';
 import ProjectContent from './ProjectContent';
 import ProjectControls from './ProjectsControls';
 import ProjectModal from '@/components/ui/projectModal';
-import { X } from 'lucide-react';
 
 export default function ProjectsSection() {
   const {
@@ -27,9 +26,6 @@ export default function ProjectsSection() {
   // State & Handler untuk Modal Demo Project
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState('');
-
-  // State untuk Modal Preview Gambar Fullscreen
-  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   const handleOpenDemoModal = (projectName: string) => {
     setSelectedProject(projectName);
@@ -57,8 +53,63 @@ export default function ProjectsSection() {
         </motion.p>
       </motion.div>
 
-      {/* 2. Banner Slider Full-Width */}
-      <div onClick={togglePause} className="relative w-full h-[540px] sm:h-[620px] lg:h-[670px] bg-[#0A0A0A] cursor-pointer">
+      {/* 2. MOBILE LAYOUT (Full-Width Mentok Kanan Kiri & Aspect-Ratio Horizontal) */}
+      <div className="block lg:hidden w-full space-y-6">
+        {/* Top Bar Mobile (Kategori & Number) */}
+        <div className="flex justify-between items-center w-full px-6">
+          <span className="px-3 py-1 rounded-none border border-white/20 bg-zinc-900 text-[11px] font-mono uppercase tracking-wider text-zinc-200">
+            {currentProject.category}
+          </span>
+          <div className="flex items-center gap-3 text-xs font-mono font-bold tracking-widest text-zinc-400">
+            {isPaused && <span className="text-[10px] text-zinc-400 bg-zinc-800/80 px-2 py-0.5 border border-zinc-700 animate-pulse">PAUSED</span>}
+            <div>
+              <span className="text-white font-extrabold text-base">{currentProject.id}</span> / 0{totalItems}
+            </div>
+          </div>
+        </div>
+
+        {/* Gambar Mobile: Mentok Kanan-Kiri, Rasio Horizontal 16:9 */}
+        <div className="relative w-full aspect-[16/9] bg-[#0A0A0A] overflow-hidden" onClick={togglePause}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentProject.id}
+              initial={{ opacity: 0, scale: 1.02 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <img 
+                src={currentProject.image} 
+                alt={currentProject.title} 
+                className="w-full h-full object-cover object-top filter brightness-95" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent pointer-events-none" />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Teks Penjelasan & Navigasi di Bawah Gambar */}
+        <div className="px-6 space-y-6 pt-2">
+          <ProjectContent 
+            currentProject={currentProject} 
+            onDemoClick={handleOpenDemoModal} 
+          />
+          <ProjectControls
+            currentIndex={currentIndex}
+            isPaused={isPaused}
+            handleSelect={handleSelect}
+            handlePrev={handlePrev}
+            handleNext={handleNext}
+          />
+        </div>
+      </div>
+
+      {/* 2. DESKTOP LAYOUT (TIDAK DIUBAH SAMA SEKALI) */}
+      <div 
+        onClick={togglePause} 
+        className="hidden lg:block relative w-full h-[670px] bg-[#0A0A0A] cursor-pointer"
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={currentProject.id}
@@ -74,9 +125,9 @@ export default function ProjectsSection() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-8 flex flex-col justify-between">
+        <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-20 py-8 flex flex-col justify-between pointer-events-none">
           {/* Top Bar */}
-          <div className="flex justify-between items-center w-full">
+          <div className="flex justify-between items-center w-full pointer-events-auto">
             <span className="px-3.5 py-1 rounded-none border border-white/20 bg-black/60 text-[11px] font-mono uppercase tracking-wider text-zinc-200 backdrop-blur-md">
               {currentProject.category}
             </span>
@@ -89,11 +140,10 @@ export default function ProjectsSection() {
           </div>
 
           {/* Bottom Area: Menampilkan Komponen Teks & Navigasi */}
-          <div className="space-y-6">
+          <div className="space-y-6 pointer-events-auto">
             <ProjectContent 
               currentProject={currentProject} 
               onDemoClick={handleOpenDemoModal} 
-              onViewImageClick={(imageUrl) => setPreviewImage(imageUrl)}
             />
             <ProjectControls
               currentIndex={currentIndex}
@@ -112,7 +162,7 @@ export default function ProjectsSection() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.5 }}
-        className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-8 text-center"
+        className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-10 text-center"
       >
         <p className="text-xs sm:text-sm font-mono text-zinc-500 italic">
           {`"${PROJECTS_TEXT.closingQuote}"`}
@@ -125,35 +175,6 @@ export default function ProjectsSection() {
         onClose={() => setIsModalOpen(false)} 
         projectName={selectedProject} 
       />
-
-      {/* Modal Preview Gambar Fullscreen */}
-      <AnimatePresence>
-        {previewImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setPreviewImage(null)}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 cursor-zoom-out"
-          >
-            <button
-              onClick={() => setPreviewImage(null)}
-              className="absolute top-6 right-6 p-2 bg-zinc-900 border border-zinc-700 text-white hover:border-white transition-colors cursor-pointer"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <motion.img
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              src={previewImage}
-              alt="Project Preview"
-              className="max-w-full max-h-[90vh] object-contain border border-zinc-800 shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

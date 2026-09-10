@@ -22,20 +22,15 @@ export const ABOUT_TEXT = {
       bold1: 'teknologi, investasi, bisnis, dan pengembangan diri',
       after: '—empat pilar yang terus saya pelajari dan dalami secara konsisten.',
     },
-    // BAGIAN YANG DIUBAH: Menghilangkan kesan "bingung"
     p4: 'Bagi saya, hidup adalah proses adaptasi yang dinamis, di mana yang terpenting adalah memaksimalkan potensi saat ini daripada mencemaskan tujuan akhir.',
     p5: {
       before: 'Fokus saya sekarang adalah terus ',
       bold1: 'belajar, mencoba, membangun, dan berkembang',
       after: ' langkah demi langkah.',
     },
-    p6: {
-      part1: 'Saya belum sampai di sana, ',
-      part2: 'Saya menikmati setiap proses dalam perjalanan ini.',
-    },
-    principle: {
-      label: 'Prinsip Sederhana',
-      value: 'Tidak harus langsung hebat, yang penting konsisten untuk terus bergerak.',
+    motto: {
+      label: 'Motto Hidup',
+      value: 'Jika kamu ingin kemajuan, keluarlah dari zona nyaman.',
     },
   },
 };

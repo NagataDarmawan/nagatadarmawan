@@ -33,7 +33,7 @@ export default function AboutSection() {
 
         {/* Grid Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-2">
-          {/* Kolom Foto: Mentok Full Kanan Kiri di Mobile dengan Efek Pudar */}
+          {/* Kolom Foto */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function AboutSection() {
                 }}
               />
 
-              {/* Overlap Gradien Warna Latar (#EAE7E0) untuk Transisi Halus di Bawah */}
+              {/* Overlap Gradien Warna Latar */}
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#EAE7E0] via-[#EAE7E0]/70 to-transparent pointer-events-none" />
             </div>
           </motion.div>
@@ -124,24 +124,16 @@ export default function AboutSection() {
                 {ABOUT_TEXT.bioParagraphs.p5.after}
               </motion.p>
 
-              <motion.p
-                variants={itemVariants}
-                className="font-bold text-[#111111] text-lg sm:text-xl pt-2"
-              >
-                {ABOUT_TEXT.bioParagraphs.p6.part1}{" "}
-                <span>{ABOUT_TEXT.bioParagraphs.p6.part2}</span>
-              </motion.p>
-
-              {/* Prinsip Sederhana */}
+              {/* Motto Hidup */}
               <motion.div
                 variants={itemVariants}
                 className="pt-6 border-t border-[#DCD8D0] space-y-1"
               >
                 <span className="text-xs font-mono uppercase tracking-[0.2em] font-bold text-[#111111] block">
-                  {ABOUT_TEXT.bioParagraphs.principle.label}
+                  {ABOUT_TEXT.bioParagraphs.motto.label}
                 </span>
                 <p className="text-sm sm:text-base font-semibold text-[#111111] italic">
-                  &quot;{ABOUT_TEXT.bioParagraphs.principle.value}&quot;
+                  &quot;{ABOUT_TEXT.bioParagraphs.motto.value}&quot;
                 </p>
               </motion.div>
             </div>

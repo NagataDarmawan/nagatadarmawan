@@ -1,8 +1,7 @@
 export interface FocusItem {
   id: string;
   title: string;
-  p1: string;
-  p2: string;
+  description: string;
   focusLabel: string;
   skills: string[];
   image: string;
@@ -10,42 +9,38 @@ export interface FocusItem {
 
 export const FOCUS_TEXT = {
   headline: "Apa yang Sedang Saya Pahami?",
-  subHeadline: "Ada banyak hal yang sampai sekarang masih saya cari jawabannya.",
+  subHeadline: "Proses eksplorasi dan pemahaman berkelanjutan yang terus saya jalani untuk membentuk sudut pandang baru.",
   items: [
     {
       id: "01",
       title: "TEKNOLOGI",
-      p1: "Saya tertarik bagaimana teknologi dapat digunakan untuk membuat sesuatu yang benar-benar berguna.",
-      p2: "Saat ini saya sedang belajar membangun website, aplikasi, dan berbagai project digital sambil memahami bagaimana sebuah ide dapat diubah menjadi sesuatu yang nyata.",
+      description: "Mempelajari cara menerjemahkan ide menjadi produk digital yang fungsional melalui pengembangan web, coding, dan eksplorasi alat pemroduktif modern.",
       focusLabel: "Sedang didalami:",
-      skills: ["Web Development", "Coding", "UI/UX", "AI & Produktivitas"],
-      image: "/tech.jpeg", // Ganti dengan path foto masing-masing
+      skills: ["Web Development", "Coding", "UI/UX", "AI Tools"],
+      image: "/tech.jpeg",
     },
     {
       id: "02",
       title: "KEUANGAN",
-      p1: "Saya mulai mengenal investasi sejak sekitar 2021–2022 dan sejak saat itu semakin tertarik memahami bagaimana uang, bisnis, dan investasi bekerja.",
-      p2: "Saya ingin memahami bagaimana cara membangun kondisi keuangan yang lebih baik dalam jangka panjang.",
+      description: "Mendalami logika pasar modal, analisis fundamental, dan pengelolaan aset untuk membangun ketahanan finansial jangka panjang sejak 2021.",
       focusLabel: "Sedang didalami:",
-      skills: ["Investasi", "Pasar Saham", "Analisis Fundamental", "Manajemen Keuangan"],
+      skills: ["Investasi", "Pasar Saham", "Analisis Fundamental", "Manajemen Risiko"],
       image: "/finance.jpg",
     },
     {
       id: "03",
       title: "BISNIS",
-      p1: "Saya ingin memahami bagaimana sebuah ide dapat berubah menjadi sesuatu yang benar-benar dibutuhkan orang.",
-      p2: "Bukan hanya tentang membuat produk, tetapi juga memahami masalah, pengguna, nilai, dan bagaimana sebuah bisnis dapat berkembang.",
+      description: "Eksplorasi cara kerja bisnis, pemecahan masalah pengguna, riset pasar, dan bagaimana sebuah nilai dapat diubah menjadi peluang yang berkelanjutan.",
       focusLabel: "Sedang didalami:",
-      skills: ["Cara Kerja Bisnis", "Pola Pikir Usaha", "Riset Pasar", "Peluang Usaha"],
+      skills: ["Model Bisnis", "Riset Pasar", "Peluang Usaha", "Problem Solving"],
       image: "/bussines.jpg",
     },
     {
       id: "04",
-      title: "DIRI SENDIRI",
-      p1: "Mungkin ini adalah bagian yang paling sulit.",
-      p2: "Saya masih mencari tahu apa yang sebenarnya saya sukai, apa yang ingin saya kuasai, dan kehidupan seperti apa yang ingin saya bangun.",
+      title: "PENGEMBANGAN DIRI",
+      description: "Proses mengasah kedisiplinan, pola pikir, kebiasaan positif, dan arah hidup untuk membentuk versi diri yang lebih baik dari hari ke hari.",
       focusLabel: "Sedang dikerjakan:",
-      skills: ["Disiplin", "Konsistensi", "Kebugaran Fisik", "Pengembangan Diri"],
+      skills: ["Disiplin", "Konsistensi", "Kebugaran Fisik", "Mindset"],
       image: "/self.jpg",
     },
   ],
