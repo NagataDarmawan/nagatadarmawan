@@ -4,37 +4,38 @@ export const ABOUT_TEXT = {
   bioParagraphs: {
     greeting: 'Halo, saya Nagata Darmawan.',
     p1: {
-      before: 'Sekitar 2021–2022, saya mulai mengenal dunia ',
+      before: 'Perjalanan saya dimulai sekitar tahun 2021–2022 saat pertama kali mengenal dunia ',
       bold1: 'investasi',
-      middle: ' dan tertarik dengan ',
-      bold2: 'workout serta kebugaran',
-      after: '. Dari sana, saya mulai senang mempelajari hal baru secara mandiri.',
+      middle: '. Dari sana, saya mulai ',
+      bold2: 'mendalaminya secara mandiri',
+      after: ' dan terbiasa dengan pola pikir berbasis riset serta analisis logis.',
     },
     p2: {
-      before: 'Beberapa waktu setelah itu, saya mulai mengenal ',
+      before: 'Rasa ingin tahu yang sama kemudian membawa saya mengenal dunia ',
       bold1: 'coding',
-      middle: ' dan tertarik untuk mengeksplorasi dunia ',
-      bold2: 'teknologi',
+      middle: ' dan tertarik untuk mengeksplorasi ',
+      bold2: 'dunia teknologi',
       after: ' lebih jauh.',
     },
     p3: {
-      before: 'Kini, saya tertarik pada ',
+      before: 'Kini, seluruh fokus saya bertumpu pada ',
       bold1: 'teknologi, investasi, bisnis, dan pengembangan diri',
-      after: ', sambil terus mencoba membangun berbagai hal dari ide yang saya punya.',
+      after: '—empat pilar yang terus saya pelajari dan dalami secara konsisten.',
     },
-    p4: 'Saya belum tahu persis akan menjadi apa beberapa tahun ke depan. Dan tidak apa-apa.',
+    // BAGIAN YANG DIUBAH: Menghilangkan kesan "bingung"
+    p4: 'Bagi saya, hidup adalah proses adaptasi yang dinamis, di mana yang terpenting adalah memaksimalkan potensi saat ini daripada mencemaskan tujuan akhir.',
     p5: {
-      before: 'Untuk sekarang, saya hanya ingin terus ',
+      before: 'Fokus saya sekarang adalah terus ',
       bold1: 'belajar, mencoba, membangun, dan berkembang',
-      after: '.',
+      after: ' langkah demi langkah.',
     },
     p6: {
       part1: 'Saya belum sampai di sana, ',
-      part2: 'Saya masih dalam perjalanan.',
+      part2: 'Saya menikmati setiap proses dalam perjalanan ini.',
     },
     principle: {
       label: 'Prinsip Sederhana',
-      value: 'Tidak harus langsung hebat, Yang penting terus bergerak.',
+      value: 'Tidak harus langsung hebat, yang penting konsisten untuk terus bergerak.',
     },
   },
 };
