@@ -46,19 +46,19 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-zinc-900/30 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Container */}
-      <div className="relative w-full flex flex-col lg:flex-row items-center my-auto py-2 lg:py-0 gap-6 lg:gap-0 z-10">
+      <div className="relative w-full flex flex-col xl:flex-row items-center my-auto py-2 xl:py-0 gap-6 xl:gap-0 z-10">
         
         {/* TEKS */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isReady ? "show" : "hidden"}
-          className="w-full max-w-xl lg:max-w-2xl flex flex-col justify-center space-y-4 md:space-y-6 mr-auto mt-auto pt-10 lg:pt-0"
+          className="w-full max-w-xl xl:max-w-2xl flex flex-col justify-center space-y-4 md:space-y-6 mr-auto mt-auto pt-10 xl:pt-0"
         >
-          {/* FOTO MOBILE */}
+          {/* FOTO MOBILE & TABLET */}
           <motion.div 
             variants={itemVariants}
-            className="block lg:hidden w-[calc(100%+3rem)] -mx-6 -mt-28 sm:-mt-32 mb-6"
+            className="block xl:hidden w-[calc(100%+3rem)] -mx-6 -mt-28 sm:-mt-32 mb-6"
           >
             <img
               src="/nagataSelf2.jpg"
@@ -168,12 +168,12 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
           </motion.div>
         </motion.div>
 
-        {/* FOTO DESKTOP - Transisi Gradien Pudar Diperhalus Mulus */}
+        {/* FOTO DESKTOP (Layout awal asli, menggunakan xl agar ukuran layar tablet menggunakan layout mobile) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isReady && isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="hidden lg:flex absolute right-0 -mr-6 sm:-mr-12 lg:-mr-20 bottom-[-24px] z-0 w-[55vw] max-w-[750px] xl:max-w-[850px] h-[95vh] items-end justify-end pointer-events-none"
+          className="hidden xl:flex absolute right-0 -mr-6 sm:-mr-12 lg:-mr-20 bottom-[-24px] z-0 w-[55vw] max-w-[750px] xl:max-w-[850px] h-[95vh] items-end justify-end pointer-events-none"
         >
           <img
             src="/nagataSelf.jpg"
@@ -188,7 +188,6 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
               maskComposite: 'intersect',
             }}
           />
-          {/* Overlay pendukung agar pudar bagian bawah semakin sempurna */}
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent pointer-events-none" />
         </motion.div>
 
