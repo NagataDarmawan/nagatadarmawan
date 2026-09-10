@@ -33,17 +33,14 @@ export default function FocusItemBlock({ item, index, isLast, itemVariants, onIn
         {item.id} — {item.title}
       </span>
       <p className="text-sm sm:text-base leading-relaxed text-zinc-300">
-        {item.p1}
-      </p>
-      <p className="text-sm sm:text-base leading-relaxed text-zinc-400">
-        {item.p2}
+        {item.description}
       </p>
       <div className="pt-2">
         <span className="text-xs font-mono text-zinc-500 block mb-1">
           {item.focusLabel}
         </span>
         <p className="text-xs sm:text-sm font-mono text-white font-medium tracking-wide">
-          {item.skills}
+          {Array.isArray(item.skills) ? item.skills.join(', ') : item.skills}
         </p>
       </div>
     </motion.div>
