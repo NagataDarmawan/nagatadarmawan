@@ -31,7 +31,7 @@ export default function ProjectContent({
           </span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-none drop-shadow-md">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-none drop-shadow-md">
           {currentProject.title}
         </h1>
 
