@@ -13,17 +13,17 @@ export default function JourneySection() {
       id="journey" 
       className="relative w-full bg-[#0A0A0A] text-white py-16 lg:py-20 font-sans select-none overflow-hidden -mt-px"
     >
-      {/* Background Foto Mobile (Pudar Atas dan Bawah Mulus) */}
+      {/* Background Foto Mobile (Warna Asli & Pudar Mulus) */}
       <div className="block lg:hidden absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img 
           src={JOURNEY_TEXT.image} 
           alt={JOURNEY_TEXT.author}
-          className="w-full h-full object-cover object-center opacity-70"
+          className="w-full h-full object-cover object-center opacity-75"
           style={{
             WebkitMaskImage:
-              'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
+              'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
             maskImage:
-              'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
+              'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]/80" />
@@ -57,26 +57,26 @@ export default function JourneySection() {
 
             <motion.p 
               variants={itemVariants}
-              className="text-lg sm:text-xl font-medium text-zinc-300 lg:text-zinc-400 italic"
+              className="text-base sm:text-lg font-medium text-zinc-300 lg:text-zinc-400 italic"
             >
               {JOURNEY_TEXT.subHeadline}
             </motion.p>
           </div>
 
-          <motion.div variants={itemVariants} className="space-y-1 text-sm sm:text-base text-zinc-200 lg:text-zinc-400 font-medium drop-shadow-sm">
+          <motion.div variants={itemVariants} className="space-y-2 text-sm text-zinc-200 lg:text-zinc-300 font-normal drop-shadow-sm">
             {JOURNEY_TEXT.paragraphs.map((line, idx) => (
               <p key={idx}>{line}</p>
             ))}
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-3 pt-2">
-            <p className="text-base sm:text-lg font-bold text-white font-mono uppercase tracking-wide drop-shadow-sm">
+            <p className="text-sm font-bold text-white font-mono uppercase tracking-wide drop-shadow-sm">
               {JOURNEY_TEXT.trialQuote}
             </p>
             
             <div className="space-y-1.5 pl-4 border-l-2 border-white">
               {JOURNEY_TEXT.actionPoints.map((action, idx) => (
-                <p key={idx} className="text-sm sm:text-base font-black uppercase text-white lg:text-zinc-200 tracking-wider">
+                <p key={idx} className="text-sm font-semibold uppercase text-zinc-200 tracking-wider">
                   {action}
                 </p>
               ))}
@@ -85,22 +85,22 @@ export default function JourneySection() {
 
           <motion.p 
             variants={itemVariants}
-            className="text-xs sm:text-sm text-zinc-200 lg:text-zinc-400 leading-relaxed font-medium max-w-xl drop-shadow-sm"
+            className="text-sm text-zinc-300 leading-relaxed font-normal max-w-xl drop-shadow-sm"
           >
             {JOURNEY_TEXT.philosophyQuote}
           </motion.p>
 
-          <motion.div variants={itemVariants} className="pt-4 space-y-1 border-t border-zinc-700 lg:border-zinc-900">
-            <p className="text-sm font-mono text-zinc-300 lg:text-zinc-500 italic">
+          <motion.div variants={itemVariants} className="pt-4 space-y-1 border-t border-zinc-800">
+            <p className="text-xs font-mono text-zinc-400 italic">
               {JOURNEY_TEXT.closingText}
             </p>
-            <p className="text-base sm:text-lg font-mono font-black uppercase tracking-widest text-white drop-shadow-sm">
+            <p className="text-sm font-mono font-bold uppercase tracking-widest text-white drop-shadow-sm">
               {JOURNEY_TEXT.author}
             </p>
           </motion.div>
         </motion.div>
 
-        {/* Sisi Kanan: Foto Desktop */}
+        {/* Sisi Kanan: Foto Desktop (Warna Asli & Pudar Natural) */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -114,14 +114,14 @@ export default function JourneySection() {
             className="w-full h-full object-cover object-[center_35%] filter drop-shadow-2xl pointer-events-auto"
             style={{
               WebkitMaskImage:
-                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
               WebkitMaskComposite: 'intersect',
               maskImage:
-                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
               maskComposite: 'intersect',
             }}
           />
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
         </motion.div>
 
       </div>
