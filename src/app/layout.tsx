@@ -4,7 +4,7 @@ import Preloader from '@/components/common/Preloader';
 import SmoothScroll from '@/components/common/SmoothScroll';
 
 export const metadata: Metadata = {
-  title: 'NAGATA DARMAWAN — Personal Website & Portfolio',
+  title: 'NAGATA DARMAWAN — Personal Website',
   description: 'Situs resmi Nagata Darmawan. Ruang eksplorasi dan proses pemahaman seputar teknologi, bisnis, keuangan, dan pengembangan diri.',
   keywords: [
     'Nagata Darmawan',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     google: 'google-site-verification: google348914543dbb932b.html',
   },
   openGraph: {
-    title: 'NAGATA DARMAWAN — Personal Website & Portfolio',
+    title: 'NAGATA DARMAWAN — Personal Website',
     description: 'Situs resmi Nagata Darmawan. Ruang eksplorasi dan proses pemahaman seputar teknologi, bisnis, keuangan, dan pengembangan diri.',
     url: 'https://nagatadarmawan.vercel.app',
     siteName: 'Nagata Darmawan',
