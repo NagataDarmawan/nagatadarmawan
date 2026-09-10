@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Nagata Darmawan' }],
   creator: 'Nagata Darmawan',
   metadataBase: new URL('https://nagatadarmawan.vercel.app'),
+  verification: {
+    google: 'google-site-verification: google348914543dbb932b.html',
+  },
   openGraph: {
     title: 'NAGATA DARMAWAN — Personal Website & Portfolio',
     description: 'Situs resmi Nagata Darmawan. Ruang eksplorasi dan proses pemahaman seputar teknologi, bisnis, keuangan, dan pengembangan diri.',
