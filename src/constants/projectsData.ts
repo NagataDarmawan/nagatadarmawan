@@ -4,9 +4,8 @@ export interface ProjectItem {
   title: string;
   subtitle: string;
   description: string;
-  tags: string[];
   status: string;
-  role: string; // Keterangan tambahan (misal: Frontend)
+  role: string;
   image: string;
   demoUrl?: string;
 }
@@ -24,8 +23,7 @@ export const PROJECTS_TEXT = {
       title: "ANGONDUIT.",
       subtitle: "Dashboard Investasi Pribadi",
       description:
-        "Konsep dashboard untuk membantu memantau portofolio investasi, aset, keuntungan, dan kondisi keuangan dalam satu tempat.",
-      tags: ["React", "TypeScript", "Finance"],
+        "Konsep dashboard untuk memantau portofolio investasi, aset, keuntungan, dan kondisi keuangan secara ringkas dalam satu tempat.",
       status: "Concept App",
       role: "Frontend",
       image: "/AngonDuit.jpg",
@@ -37,8 +35,7 @@ export const PROJECTS_TEXT = {
       title: "RibuanMDPL.id",
       subtitle: "Landing Page Open Trip Pendakian Gunung",
       description:
-        "RibuanMDPL.id adalah platform open trip pendakian gunung yang menyediakan berbagai pilihan perjalanan untuk menjelajahi keindahan pegunungan Indonesia. Temukan gunung pilihanmu, pilih paket pendakian, dan nikmati perjalanan bersama pendaki lainnya dengan lebih mudah dan menyenangkan.",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        "Platform open trip pendakian gunung untuk membantu pendaki memilih paket perjalanan dan menjelajahi pegunungan Indonesia dengan lebih praktis.",
       status: "Live Website",
       role: "Frontend",
       image: "/ribuanmdpl.jpeg",
@@ -50,8 +47,7 @@ export const PROJECTS_TEXT = {
       title: "NAGATA DARMAWAN",
       subtitle: "Landing Page Personal Branding",
       description:
-        "Representasi dari perjalanan saya sebagai mahasiswa Teknik Informatika yang terus belajar, mencoba hal baru, dan berproses mendekati tujuan. Menampilkan minat saya di bidang teknologi web dan lanskap finansial.",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        "Representasi perjalanan pribadi dalam belajar dan mencoba hal baru, sekaligus menampilkan minat di bidang web development dan finansial.",
       status: "Live Website",
       role: "Frontend",
       image: "/WebPersonalBrand.jpg",
@@ -63,22 +59,19 @@ export const PROJECTS_TEXT = {
       title: "eduStock",
       subtitle: "Website Edukasi",
       description:
-        "Konsep Website edukasi saham sederhana yang mempelajari jenis-jenis emiten, strategi alokasi sektor, proses transaksi bid/offer, hingga manajemen risiko dan dividen.",
-      tags: ["React", "Node.js", "Google Sheets"],
+        "Konsep website edukasi saham sederhana untuk mempelajari jenis emiten, alokasi sektor, hingga dasar manajemen risiko dan dividen.",
       status: "Concept App",
       role: "Frontend",
       image: "/bussines.jpg",
       demoUrl: "#",
     },
-
     {
       id: "05",
       category: "POINT OF SALE",
       title: "POS",
       subtitle: "Sistem Kasir Sederhana",
       description:
-        "Konsep sistem point of sale untuk membantu bisnis kecil mengelola produk, transaksi, stok, dan laporan.",
-      tags: ["React", "Node.js", "Database"],
+        "Konsep sistem point of sale untuk membantu bisnis kecil mengelola produk, transaksi, dan pencatatan stok harian dengan lebih rapi.",
       status: "Concept App",
       role: "Frontend",
       image: "/self.jpg",

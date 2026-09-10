@@ -1,8 +1,6 @@
 export const ABOUT_TEXT = {
   headline: 'Sedikit Tentang Saya',
   imageBadge: 'NAGATA DARMAWAN',
-  imageYear: 'EST. 2026',
-  imageCaption: 'Teknologi • Keuangan • Bisnis • Kebugaran',
   bioParagraphs: {
     greeting: 'Halo, saya Nagata Darmawan.',
     p1: {
@@ -13,11 +11,11 @@ export const ABOUT_TEXT = {
       after: '. Dari sana, saya mulai senang mempelajari hal baru secara mandiri.',
     },
     p2: {
-      before: 'Beberapa waktu setelah itu, saya melanjutkan pendidikan di ',
-      bold1: 'D4 Teknik Informatika',
-      middle: ' dan mulai mengenal dunia ',
-      bold2: 'teknologi serta pemrograman',
-      after: ' lebih serius.',
+      before: 'Beberapa waktu setelah itu, saya mulai mengenal ',
+      bold1: 'coding',
+      middle: ' dan tertarik untuk mengeksplorasi dunia ',
+      bold2: 'teknologi',
+      after: ' lebih jauh.',
     },
     p3: {
       before: 'Kini, saya tertarik pada ',

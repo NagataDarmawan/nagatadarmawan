@@ -11,9 +11,9 @@ export const HERO_TEXT = {
   tagline: 'Tech Enthusiast • Finance Enthusiast',
   subHeadline: 'Saya Belum Sampai di Sana.',
   paragraph1: {
-    before: 'Seorang mahasiswa ',
-    bold1: 'Teknik Informatika',
-    middle1: ' yang sedang mencari tahu apa yang ingin ',
+    before: 'Seseorang yang sedang terus ',
+    bold1: 'berkembang',
+    middle1: ' sambil mencari tahu apa yang ingin ',
     bold2: 'dibangun',
     middle2: ', ',
     bold3: 'dipelajari',
