@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FOCUS_TEXT } from '@/constants/focusData';
-import { useFocusAnimation } from '@/hooks/useFocusAnimation';
+import { useFocusAnimation } from '@/animations/useFocusAnimation';
 import { 
   staggerContainer as containerVariants, 
   fadeInUp as itemVariants,

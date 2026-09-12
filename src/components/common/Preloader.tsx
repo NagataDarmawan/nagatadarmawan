@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { usePreloader } from '@/hooks/usePreloader';
+import { usePreloader } from '@/animations/usePreloader';
 
 export default function Preloader() {
   const { progress, isLoading } = usePreloader();

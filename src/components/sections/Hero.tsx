@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { HERO_TEXT } from '@/constants/heroData';
-import { useTypingLoop } from '@/hooks/useTypingLoop';
+import { useTypingLoop } from '@/animations/useTypingLoop';
 import { scrollToSection } from '@/utils/scrollTo';
 import { staggerContainer as containerVariants, heroItemVariants as itemVariants } from '@/animations/variants';
 

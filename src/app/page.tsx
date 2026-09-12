@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import Preloader from '@/components/common/Preloader'; // sesuaikan path preloader kamu
 import HeroSection from '@/components/sections/Hero';
 import AboutSection from '@/components/sections/About';
-import { usePreloader } from '@/hooks/usePreloader';
+import { usePreloader } from '@/animations/usePreloader';
 import FocusSection from '@/components/sections/Focus';
 import ProjectsSection from '@/components/sections/projects/Projects';
 import NowFocusSection from '@/components/sections/NowFocus';

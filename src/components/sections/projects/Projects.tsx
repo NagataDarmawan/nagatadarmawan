@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PROJECTS_TEXT } from '@/constants/projectsData';
-import { useProjectsSlider } from '@/hooks/useProjectsSlider';
+import { useProjectsSlider } from '@/animations/useProjectsSlider';
 import { staggerContainer as headerContainerVariants, fadeInUp as headerItemVariants, quoteVariants } from '@/animations/variants';
 import ProjectContent from './ProjectContent';
 import ProjectControls from './ProjectsControls';

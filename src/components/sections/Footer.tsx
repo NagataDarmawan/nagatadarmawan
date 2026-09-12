@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FOOTER_DATA } from '@/constants/footerData';
 import ProjectModal from '@/components/ui/projectModal';
 import { scrollToSection } from '@/utils/scrollTo';
-import { useTypingLoop } from '@/hooks/useTypingLoop';
+import { useTypingLoop } from '@/animations/useTypingLoop';
 import { staggerContainer as containerVariants, heroItemVariants as itemVariants } from '@/animations/variants';
 
 // Kumpulan SVG Icons untuk Footer
