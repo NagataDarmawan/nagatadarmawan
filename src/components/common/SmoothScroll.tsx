@@ -12,7 +12,8 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 0.8,
-      touchMultiplier: 1.5,
+      touchMultiplier: 2.0,
+      syncTouch: true, // Pengganti smoothTouch di versi Lenis terbaru
     });
 
     // Tempelkan instance ke window agar bisa diakses komponen lain
