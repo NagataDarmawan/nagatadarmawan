@@ -4,20 +4,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FOCUS_TEXT } from '@/constants/focusData';
 import { useFocusAnimation } from '@/hooks/useFocusAnimation';
+import { 
+  staggerContainer as containerVariants, 
+  fadeInUp as itemVariants,
+  slideInLeft,
+  slideInRight
+} from '@/animations/variants';
 
 export default function FocusSection() {
-  const { 
-    sectionRef, 
-    isInView, 
-    activeStep, 
-    containerVariants, 
-    itemVariants 
-  } = useFocusAnimation();
+  const { activeStep } = useFocusAnimation();
 
   return (
     <section 
       id="focus" 
-      ref={sectionRef} 
       className="relative w-full bg-[#0A0A0A] text-white py-16 pl-6 sm:pl-12 lg:pl-20 pr-6 sm:pr-12 lg:pr-0 font-sans select-none overflow-hidden"
     >
       <div className="max-w-7xl ml-auto space-y-10">
@@ -26,7 +25,8 @@ export default function FocusSection() {
         <motion.div 
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "show" : "hidden"}
+          whileInView="show"
+          viewport={{ once: false, amount: 0.3 }}
           className="space-y-2 max-w-3xl pr-0 md:pr-12 lg:pr-20"
         >
           <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
@@ -40,17 +40,19 @@ export default function FocusSection() {
         {/* List Per Poin */}
         <div className="space-y-10 md:space-y-6 lg:space-y-8">
           {FOCUS_TEXT.items.map((item) => (
-            <motion.div 
+            <div 
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center overflow-hidden"
             >
               
-              {/* Foto Container */}
-              <div className="order-1 md:order-2 md:col-span-6 lg:col-span-6 w-[calc(100%+3rem)] -mx-6 md:w-full md:mx-0">
+              {/* Foto Container (Datang dari Samping Kanan) */}
+              <motion.div 
+                variants={slideInRight}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.2 }}
+                className="order-1 md:order-2 md:col-span-6 lg:col-span-6 w-[calc(100%+3rem)] -mx-6 md:w-full md:mx-0"
+              >
                 <div className="relative w-full h-[240px] sm:h-[280px] overflow-hidden group">
                   
                   {/* Foto Utama - Warna Asli */}
@@ -68,10 +70,16 @@ export default function FocusSection() {
                   <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent pointer-events-none" />
 
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Teks Deskripsi */}
-              <div className="order-2 md:order-1 md:col-span-6 lg:col-span-6 pr-0 md:pr-0 space-y-3">
+              {/* Teks Deskripsi (Datang dari Samping Kiri) */}
+              <motion.div 
+                variants={slideInLeft}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.2 }}
+                className="order-2 md:order-1 md:col-span-6 lg:col-span-6 pr-0 md:pr-0 space-y-3"
+              >
                 <span className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white block">
                   {item.title}
                 </span>
@@ -80,7 +88,7 @@ export default function FocusSection() {
                   {item.description}
                 </p>
 
-                {/* Badges Menyala Serentak (Kotak Tegas) */}
+                {/* Badges Menyala Serentak */}
                 <div className="pt-2 space-y-1.5">
                   <span className="text-[11px] font-mono text-zinc-500 block">
                     {item.focusLabel}
@@ -114,9 +122,9 @@ export default function FocusSection() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-            </motion.div>
+            </div>
           ))}
         </div>
 

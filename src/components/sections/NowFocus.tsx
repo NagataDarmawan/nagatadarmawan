@@ -3,11 +3,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { NOW_FOCUS_TEXT } from '@/constants/nowFocusData';
-import { useNowFocusAnimation } from '@/hooks/useNowFocusAnimation';
+import { 
+  staggerContainer as containerVariants, 
+  fadeInUp as headerVariants,
+  slideInLeft,
+  slideInRight
+} from '@/animations/variants';
 
 export default function NowFocusSection() {
-  const { containerVariants, headerVariants, cardVariants } = useNowFocusAnimation();
-
   return (
     <section 
       id="now-focus" 
@@ -43,18 +46,26 @@ export default function NowFocusSection() {
             const isEven = index % 2 === 1;
             const numberDisplay = index + 1;
 
+            // Di Mobile:
+            // - Item 1 (index 0) & Item 3 (index 2): Seluruh blok muncul dari KIRI (slideInLeft)
+            // - Item 2 (index 1): Seluruh blok muncul dari KANAN (slideInRight)
+            // Di Desktop:
+            // - Elemen di sisi Kiri (order 1) muncul dari KIRI, Elemen di sisi Kanan (order 2) muncul dari KANAN
+            const leftBlockAnimation = isEven ? slideInRight : slideInLeft;
+            const rightBlockAnimation = isEven ? slideInLeft : slideInRight;
+
             return (
-              <motion.div
+              <div
                 key={item.id}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.2 }}
                 className="flex flex-row items-center gap-6 md:grid md:grid-cols-12 md:gap-12 md:items-center group cursor-pointer"
               >
                 
-                {/* Blok Angka Raksasa (Mobile: Warna Asli / Desktop: Grayscale ke Full Color) */}
-                <div 
+                {/* Blok Angka Raksasa */}
+                <motion.div 
+                  variants={isEven ? rightBlockAnimation : leftBlockAnimation}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: false, amount: 0.2 }}
                   className={`shrink-0 flex items-center justify-center ${
                     isEven 
                       ? 'md:order-1 md:col-span-4' 
@@ -67,10 +78,14 @@ export default function NowFocusSection() {
                   >
                     {numberDisplay}
                   </span>
-                </div>
+                </motion.div>
 
                 {/* Blok Teks Deskripsi */}
-                <div 
+                <motion.div 
+                  variants={isEven ? leftBlockAnimation : rightBlockAnimation}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: false, amount: 0.2 }}
                   className={`flex-1 space-y-3 sm:space-y-4 ${
                     isEven ? 'md:order-2 md:col-span-8' : 'md:order-1 md:col-span-8'
                   }`}
@@ -82,9 +97,9 @@ export default function NowFocusSection() {
                   <p className="text-xs sm:text-sm md:text-base leading-relaxed text-zinc-400 group-hover:text-zinc-200 transition-colors duration-300 font-medium max-w-2xl">
                     {item.description}
                   </p>
-                </div>
+                </motion.div>
 
-              </motion.div>
+              </div>
             );
           })}
         </div>

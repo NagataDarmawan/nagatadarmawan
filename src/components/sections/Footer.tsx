@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { FOOTER_DATA } from '@/constants/footerData';
 import ProjectModal from '@/components/ui/projectModal';
 import { scrollToSection } from '@/utils/scrollTo';
 import { useTypingLoop } from '@/hooks/useTypingLoop';
+import { staggerContainer as containerVariants, heroItemVariants as itemVariants } from '@/animations/variants';
 
 // Kumpulan SVG Icons untuk Footer
 const InstagramIcon = () => (
@@ -92,10 +94,16 @@ export default function FooterSection() {
 
   return (
     <footer id="footer" className="w-full bg-[#0A0A0A] text-white py-16 px-6 sm:px-12 lg:px-20 font-sans select-none -mt-px">
-      <div className="max-w-7xl mx-auto space-y-16">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.2 }}
+        className="max-w-7xl mx-auto space-y-16"
+      >
         
         {/* 1. Tagline dengan Animasi Mengetik & Sosial Media */}
-        <div className="space-y-6 max-w-2xl">
+        <motion.div variants={itemVariants} className="space-y-6 max-w-2xl">
           <p className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white leading-snug min-h-[3.5rem]">
             {displayedTagline}
             <span className="inline-block w-2 h-5 bg-white ml-1 animate-pulse align-middle" />
@@ -115,10 +123,10 @@ export default function FooterSection() {
               </a>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* 2. Grid Links: Projects & Contact */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pt-4 border-t border-zinc-900/80">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-12 gap-10 pt-4 border-t border-zinc-900/80">
           
           {/* Kolom Projects */}
           <div className="md:col-span-6 space-y-4">
@@ -174,15 +182,15 @@ export default function FooterSection() {
             </ul>
           </div>
 
-        </div>
+        </motion.div>
 
         {/* 3. Hak Cipta */}
-        <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-zinc-500 font-normal">
+        <motion.div variants={itemVariants} className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-zinc-500 font-normal">
           <p>{FOOTER_DATA.copyright}</p>
           <p className="uppercase tracking-widest text-[10px]">ALL RIGHTS RESERVED.</p>
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
 
       {/* Komponen Modal Project */}
       <ProjectModal 

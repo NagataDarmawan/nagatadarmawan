@@ -3,11 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { JOURNEY_TEXT } from '@/constants/journeyData';
-import { useJourneyAnimation } from '@/hooks/useJourneyAnimation';
+import { staggerContainer as containerVariants, journeyItemVariants as itemVariants } from '@/animations/variants';
 
 export default function JourneySection() {
-  const { containerVariants, itemVariants } = useJourneyAnimation();
-
   return (
     <section 
       id="journey" 
@@ -49,7 +47,7 @@ export default function JourneySection() {
 
           <motion.div variants={itemVariants} className="space-y-4 text-sm sm:text-base text-zinc-200 lg:text-zinc-300 font-normal leading-relaxed drop-shadow-sm">
             {JOURNEY_TEXT.story.map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
+              <motion.p key={idx} variants={itemVariants}>{paragraph}</motion.p>
             ))}
           </motion.div>
 
@@ -68,7 +66,7 @@ export default function JourneySection() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="hidden lg:flex absolute right-0 bottom-0 z-0 w-[50vw] max-w-[700px] xl:max-w-[800px] h-full items-center justify-end pointer-events-none"
         >
           <img 

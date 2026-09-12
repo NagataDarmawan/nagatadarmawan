@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PROJECTS_TEXT } from '@/constants/projectsData';
 import { useProjectsSlider } from '@/hooks/useProjectsSlider';
-import { useProjectsAnimation } from '@/hooks/useProjectsAnimation';
+import { staggerContainer as headerContainerVariants, fadeInUp as headerItemVariants, quoteVariants } from '@/animations/variants';
 import ProjectContent from './ProjectContent';
 import ProjectControls from './ProjectsControls';
 import ProjectModal from '@/components/ui/projectModal';
@@ -20,8 +20,6 @@ export default function ProjectsSection() {
     handleSelect,
     togglePause,
   } = useProjectsSlider();
-
-  const { headerContainerVariants, headerItemVariants, quoteVariants } = useProjectsAnimation();
 
   // State & Handler untuk Modal Demo Project
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -105,7 +103,7 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      {/* 2. DESKTOP LAYOUT (TIDAK DIUBAH SAMA SEKALI) */}
+      {/* 2. DESKTOP LAYOUT */}
       <div 
         onClick={togglePause} 
         className="hidden lg:block relative w-full h-[670px] bg-[#0A0A0A] cursor-pointer"

@@ -4,11 +4,9 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ABOUT_TEXT } from "@/constants/aboutData";
-import { useAboutAnimation } from "@/hooks/useAboutAnimation";
+import { staggerContainer as containerVariants, aboutItemVariants as itemVariants } from "@/animations/variants";
 
 export default function AboutSection() {
-  const { containerVariants, itemVariants } = useAboutAnimation();
-
   return (
     <section
       id="about"
@@ -20,7 +18,7 @@ export default function AboutSection() {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: false, amount: 0.2 }}
           className="max-w-4xl px-4 sm:px-0"
         >
           <motion.h2
@@ -35,10 +33,10 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-2">
           {/* Kolom Foto */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
             className="lg:col-span-6 w-full flex justify-center items-center relative"
           >
             <div className="relative w-full h-[420px] sm:h-[600px] max-w-none sm:max-w-lg overflow-hidden">
@@ -69,7 +67,7 @@ export default function AboutSection() {
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: false, amount: 0.2 }}
             className="lg:col-span-6 flex flex-col justify-between space-y-6 sm:space-y-8 text-sm sm:text-base md:text-lg leading-relaxed text-[#5F5F5B] px-4 sm:px-0"
           >
             <div className="space-y-4">

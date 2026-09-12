@@ -1,32 +1,16 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, Variants, useInView } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { HERO_TEXT } from '@/constants/heroData';
 import { useTypingLoop } from '@/hooks/useTypingLoop';
 import { scrollToSection } from '@/utils/scrollTo';
+import { staggerContainer as containerVariants, heroItemVariants as itemVariants } from '@/animations/variants';
 
 interface HeroSectionProps {
   isReady?: boolean;
 }
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.7, ease: [0.215, 0.61, 0.355, 1] as const } 
-  },
-};
 
 export default function HeroSection({ isReady = true }: HeroSectionProps) {
   const { displayedFirst, displayedLast } = useTypingLoop(
@@ -35,12 +19,8 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
     isReady
   );
 
-  const heroRef = useRef(null);
-  const isInView = useInView(heroRef, { once: true, amount: 0.1 });
-
   return (
     <section
-      ref={heroRef}
       className="relative w-full min-h-screen lg:h-screen bg-dark-bg text-white flex flex-col justify-between px-6 sm:px-12 lg:px-20 pt-16 lg:pt-20 pb-6 font-sans border-b border-line select-none overflow-x-hidden"
     >
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-zinc-900/30 rounded-full blur-3xl pointer-events-none" />
@@ -52,7 +32,9 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate={isReady ? "show" : "hidden"}
+          animate={isReady ? undefined : "hidden"}
+          whileInView={isReady ? "show" : "hidden"}
+          viewport={{ once: false, amount: 0.1 }}
           className="w-full max-w-xl lg:max-w-2xl flex flex-col justify-center space-y-4 md:space-y-6 mr-auto mt-auto pt-10 lg:pt-0"
         >
           {/* FOTO MOBILE */}
@@ -168,11 +150,12 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
           </motion.div>
         </motion.div>
 
-        {/* FOTO DESKTOP - Transisi Gradien Pudar Diperhalus Mulus */}
+        {/* FOTO DESKTOP */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
-          animate={isReady && isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          whileInView={isReady ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+          viewport={{ once: false, amount: 0.1 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="hidden lg:flex absolute right-0 -mr-6 sm:-mr-12 lg:-mr-20 bottom-[-24px] z-0 w-[600px] lg:w-[55vw] max-w-[750px] xl:max-w-[850px] h-[95vh] items-end justify-end pointer-events-none"
         >
           <img
@@ -188,7 +171,6 @@ export default function HeroSection({ isReady = true }: HeroSectionProps) {
               maskComposite: 'intersect',
             }}
           />
-          {/* Overlay pendukung agar pudar bagian bawah semakin sempurna */}
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent pointer-events-none" />
         </motion.div>
 
