@@ -19,15 +19,15 @@ export const PROJECTS_TEXT = {
   items: [
     {
       id: "01",
-      category: "FINANCE APP",
-      title: "ANGONDUIT.",
-      subtitle: "Dashboard Investasi Pribadi",
+      category: "SPORTS & COMMUNITY",
+      title: "PERSEKAT TEGAL",
+      subtitle: "Web Non Resmi Persekat Tegal",
       description:
-        "Konsep dashboard untuk memantau portofolio investasi, aset, keuntungan, dan kondisi keuangan secara ringkas dalam satu tempat.",
+        "Konsep website klub sepak bola modern yang menyajikan berita terkini, jadwal pertandingan, profil skuad, dan informasi komunitas pendukung secara interaktif.",
       status: "Concept App",
       role: "Frontend",
-      image: "/AngonDuit.jpg",
-      demoUrl: "https://demo.investdash.com",
+      image: "/WebBola.jpg",
+      demoUrl: "https://bolategal.vercel.app",
     },
     {
       id: "02",

@@ -8,11 +8,10 @@ export const FOOTER_DATA = {
     { name: "Facebook", href: "https://facebook.com", icon: "Facebook" },
   ],
   projects: [
-    { name: "ANGONDUIT.", url: "https://demo.asetku.com" },
+    { name: "PERSEKAT TEGAL", url: "https://bolategal.vercel.app" },
     { name: "RibuanMDPL.id", url: "https://ribuanmdpl.vercel.app" },
     { name: "NAGATA DARMAWAN", url: "https://nagatadarmawan.vercel.app" },
-    { name: "UMKM POS Web App", url: "https://demo.umkmpos.com" },
-    { name: "eduStock", url: "https://demo.siakad.com" },
+    { name: "AgroFly", url: "https://agrofly.vercel.app" },
   ],
   contacts: [
     { name: "GitHub", href: "https://github.com", value: "github.com/nagatadarmawan", icon: "Github" },
