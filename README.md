@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Nagata Darmawan — Personal Portfolio
 
-## Getting Started
+«"Saya Belum Sampai di Sana."»
 
-First, run the development server:
+A personal portfolio website built to introduce myself, showcase my projects, and document my journey in technology and software development.
 
-```bash
+Live Website: "nagatadarmawan.vercel.app" (https://nagatadarmawan.vercel.app)
+
+About
+
+This website is my personal space to present my profile, explore my interests in technology, and showcase projects that I have developed throughout my learning journey.
+
+The portfolio is designed with a minimalist approach, focusing on simplicity, readability, and a clean visual experience.
+
+Tech Stack
+
+Technology| Description
+"Next.js" (https://nextjs.org/)| React framework
+"React" (https://react.dev/)| UI development
+"TypeScript" (https://www.typescriptlang.org/)| Type-safe JavaScript
+"Tailwind CSS" (https://tailwindcss.com/)| Styling
+"Framer Motion" (https://motion.dev/)| Animations
+"Lenis" (https://lenis.darkroom.engineering/)| Smooth scrolling
+"Lucide React" (https://lucide.dev/)| Icons
+
+Design Concept
+
+The website uses a minimal and modern visual approach with:
+
+- Dark-themed interface.
+- Black, white, and gray color palette.
+- Minimalist typography.
+- Smooth scrolling and subtle animations.
+- Focus on content and project presentation.
+
+Getting Started
+
+Follow these steps to run the project locally.
+
+1. Clone Repository
+
+git clone https://github.com/NagataDarmawan/nagatadarmawan.git
+
+2. Navigate to Project Directory
+
+cd nagatadarmawan
+
+3. Install Dependencies
+
+npm install
+
+4. Run Development Server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open "http://localhost:3000" (http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Command| Description
+"npm run dev"| Start development server
+"npm run build"| Build production application
+"npm run start"| Start production server
+"npm run lint"| Run ESLint
 
-## Learn More
+Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This project is deployed using "Vercel" (https://vercel.com/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Every update pushed to the connected GitHub repository can be deployed through Vercel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Author
 
-## Deploy on Vercel
+Nagata Darmawan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- GitHub: "@NagataDarmawan" (https://github.com/NagataDarmawan)
+- Portfolio: "nagatadarmawan.vercel.app" (https://nagatadarmawan.vercel.app)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+<p align="center">
+  Built with curiosity and a continuous learning mindset.
+</p>
