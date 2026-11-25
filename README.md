@@ -104,6 +104,15 @@ This project is deployed on [Vercel](https://vercel.com/).
 
 **Live Website:** [nagatadarmawan.vercel.app](https://nagatadarmawan.vercel.app)
 
+---
+
+> [!NOTE]
+> **Usage Notice**
+>
+> This project is available for public viewing and portfolio evaluation purposes.
+>
+> Please do not copy, clone, or reuse any part of this project without the owner's permission.
+
 ## Author
 
 **Nagata Darmawan**
